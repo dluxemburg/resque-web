@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gemspec
 
-gem 'resque', :git => 'git://github.com/resque/resque.git', :branch => "1-x-stable"
+gem 'rails'
+
+gem 'resque', :git => 'git://github.com/resque/resque.git', :branch => "master"
 
 group :test do
   gem 'minitest-spec-rails'

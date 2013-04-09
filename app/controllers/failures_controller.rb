@@ -1,4 +1,4 @@
-class FailuresController < ApplicationController
+class FailuresController < ResqueWebController
   def show
     if params[:class]
       start_at, end_at = 0, Resque::Failure.count(params[:id])

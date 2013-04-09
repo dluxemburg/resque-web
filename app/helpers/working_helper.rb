@@ -4,7 +4,7 @@ module WorkingHelper
   end
 
   def jobs
-    @jobs ||= workers.map(&:job)
+    @jobs ||= workers.map { |w| w.try(:job) }
   end
 
   def worker_jobs
@@ -14,4 +14,9 @@ module WorkingHelper
   def sorted_worker_jobs
     @sorted_worker_jobs ||= worker_jobs.sort_by { |w, j| j['run_at'] || '' }
   end
+
+  def worker_path(str)
+    "/workers/#{str}"
+  end
+  
 end

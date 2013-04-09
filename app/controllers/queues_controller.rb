@@ -1,4 +1,4 @@
-class QueuesController < ApplicationController
+class QueuesController < ResqueWebController
   def show
     set_subtabs view_context.queue_names
   end

@@ -1,2 +1,2 @@
-class WorkingController < ApplicationController
+class WorkingController < ResqueWebController
 end

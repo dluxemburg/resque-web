@@ -1,4 +1,4 @@
-class StatsController < ApplicationController
+class StatsController < ResqueWebController
   subtabs :resque, :redis, :keys
   
   def index

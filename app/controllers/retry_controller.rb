@@ -1,4 +1,4 @@
-class RetryController < ApplicationController
+class RetryController < ResqueWebController
   def create
     if params[:failure_id] == 'all'
       if Resque::Failure.backend == Resque::Failure::Redis

@@ -1,6 +1,8 @@
-class ApplicationController < ActionController::Base
+class ResqueWebController < ActionController::Base
   protect_from_forgery
   before_filter :set_subtabs
+
+  layout 'resque_web'
 
   def self.subtabs(*tab_names)
     return defined?(@subtabs) ? @subtabs : [] if tab_names.empty?

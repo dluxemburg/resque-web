@@ -1,7 +1,7 @@
 # Match IDs with dots in them
 id_pattern = /[^\/]+/
 
-ResqueWeb::Application.routes.draw do
+ResqueWeb::Engine.routes.draw do
   resource  :overview, :controller => 'overview'
 
   resources :working
@@ -20,4 +20,10 @@ ResqueWeb::Application.routes.draw do
   get '/stats/:action/:id', :controller => :stats, :constraints => {:id => id_pattern}
 
   root :to => 'overview#show'
+end
+
+if defined? ResqueWeb::Application
+  ResqueWeb::Application.routes.draw do
+    mount ResqueWeb::Engine => "/"
+  end
 end

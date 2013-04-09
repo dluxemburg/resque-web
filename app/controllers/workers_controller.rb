@@ -1,4 +1,4 @@
-class WorkersController < ApplicationController
+class WorkersController < ResqueWebController
   before_filter :display_subtabs
 
   def show
